@@ -25,7 +25,7 @@ public class House {
     private double lotSize;
     @MyInstances(ATTRIBUTE = "bedroom", INDEX = 3)
     private int bedroom;
-    @MyInstances(ATTRIBUTE = "granite", INDEX = 4,value = {"0","1"})
+    @MyInstances(ATTRIBUTE = "granite", INDEX = 4)
     private int granite;
     @MyInstances(ATTRIBUTE = "bathroom", INDEX = 5)
     private double bathroom;

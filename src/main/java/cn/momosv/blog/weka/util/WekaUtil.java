@@ -31,8 +31,10 @@ public class WekaUtil {
                   myInstances =  field.getAnnotation(MyInstances.class);
                     if(Attribute.ARFF_ATTRIBUTE_DATE.equals(myInstances.type())){
                         attributes.add(new Attribute(myInstances.ATTRIBUTE(),myInstances.dateFormat(),myInstances.INDEX()));
-                    }else{
+                    }else if(null != Arrays.asList(myInstances.value()) && Arrays.asList(myInstances.value()).size()>0){
                         attributes.add(new Attribute(myInstances.ATTRIBUTE(),Arrays.asList(myInstances.value()),myInstances.INDEX()));
+                    }else{
+                        attributes.add(new Attribute(myInstances.ATTRIBUTE(),myInstances.INDEX()));
                     }
                   attributeMap.put(String.valueOf(myInstances.INDEX()),myInstances.ATTRIBUTE());
                 }
